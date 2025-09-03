@@ -2,16 +2,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem; 
 
 public class StartScreen : MonoBehaviour
 {
     [Header("Referências")]
-    public CanvasGroup fadeGroup;  
-    public TMP_Text pressAnyKeyText; 
+    public CanvasGroup fadeGroup;
+    public TMP_Text pressAnyKeyText;
 
     [Header("Configurações")]
-    public float fadeDuration = 1f;  
-    public string nextSceneName = "MainMenu"; 
+    public float fadeDuration = 1f;
+    public string nextSceneName = "MainMenu";
 
     private bool isWaitingForInput = false;
 
@@ -23,7 +24,7 @@ public class StartScreen : MonoBehaviour
 
     void Update()
     {
-        if (isWaitingForInput && Input.anyKeyDown)
+        if (isWaitingForInput && Keyboard.current.anyKey.wasPressedThisFrame)
         {
             StartCoroutine(FadeOutAndLoadNextScene());
         }
