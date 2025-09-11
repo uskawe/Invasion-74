@@ -990,7 +990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StartScreen
   fadeGroup: {fileID: 1795647689}
   pressAnyKeyText: {fileID: 560300336}
-  fadeDuration: 1
+  fadeDuration: 3
   nextSceneName: MainMenu
 --- !u!4 &1938448968
 Transform:
